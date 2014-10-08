@@ -5,7 +5,54 @@
     <title>移动webapp滑动组件示例</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <style>
+        body, ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
 
+        .slide {
+            width: 320px;
+            position: relative;
+            overflow: hidden;
+            padding: 30px 0;
+        }
+
+        .slide ul.img-list {
+            width: 1280px;
+            display: -webkit-box;
+        }
+
+        .slide ul.img-list li {
+            width: 320px;
+        }
+
+        .slide ul.img-list li img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+
+
+        .slide ul.nav-list {
+            position: relative;
+            top: -15px;
+            text-align: center;
+        }
+
+        .slide ul.nav-list li {
+            display: inline-block;
+            margin: 0 3px;
+            text-indent: -9999px;
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: #e2e2e2;
+        }
+
+        .slide ul.nav-list li.cur {
+            background-color: #20cfb8;
+        }
     </style>
 </head>
 <body>
@@ -16,8 +63,6 @@
             <li><a href=""><img src="./images/img3.jpg" /></a></li>
             <li><a href=""><img src="./images/img4.jpg" /></a></li>
         </ul>
-
-        <ul class="nav-list"></ul>
     </div>
 
 
@@ -28,6 +73,8 @@
 
     <script>
         ( function() {
+            new slide();
+
         } )();
 
     </script>
