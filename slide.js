@@ -48,6 +48,10 @@
             this.imgUl = $( this.el.children()[ 0 ] );
             this.imgList = this.imgUl.find( 'li' );
             this.imgLen = this.imgList.length;
+
+            this.baseWidth = this.el.width();
+            this.endX = 0;
+            this.curIdx = 1;
         },
 
         _createNav: function() {
@@ -79,7 +83,54 @@
         },
 
         _initEvent: function() {
+            var me = this,
+                imgUl = this.imgUl;
 
+            imgUl.delegate( 'li', 'touchstart', $.proxy( this._startHandler, this ) );
+            imgUl.delegate( 'li', 'touchmove', $.proxy( this._moveHandler, this ) );
+            imgUl.delegate( 'li', 'touchend', $.proxy( this._endHandler, this ) );
+        },
+
+        _startHandler: function( event ) {
+            var me = this,
+                config = this.config,
+                target = event.target;
+
+            me.startTime = +new Date();
+            me.startX = event.touches[ 0 ].pageX;
+        },
+
+        _moveHandler: function( event ) {
+            var me = this,
+                config = this.config;
+
+            event.preventDefault();
+
+            this.differX = event.targetTouches[ 0 ].pageX - me.startX;
+            this.offsetX = this.differX + this.endX;
+
+            this.imgUl.css( {
+                webkitTransition: '-webkit-transform 0s',
+                webkitTransform: 'translate3d(' + this.offsetX + 'px, 0, 0 )'
+            } );
+        },
+
+        _endHandler: function() {
+            var me = this,
+                config = this.config;
+
+            if ( this.differX > 0 ) {
+                this.curIdx--;
+            } else {
+                this.curIdx++;
+            }
+
+            this.endX = -this.baseWidth * ( this.curIdx - 1 );
+
+            this.imgUl.css( {
+                webkitTransition: '-webkit-transform 0.3s',
+                webkitTransform: 'translate3d(' + this.endX + 'px, 0, 0 )'
+            } );
         }
     } );
 
