@@ -145,7 +145,6 @@
             console.log('testMerge');
             console.log('test merge');
             console.log('modify by testMerge');
-            console.log('abc');
         },
 
         modifyByMaster: function() {
