@@ -131,6 +131,10 @@
                 webkitTransition: '-webkit-transform 0.3s',
                 webkitTransform: 'translate3d(' + this.endX + 'px, 0, 0 )'
             } );
+        },
+
+        _testMerge: function() {
+            console.log('haha');
         }
     } );
 
