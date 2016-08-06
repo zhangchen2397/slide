@@ -145,10 +145,12 @@
             console.log('testMerge');
             console.log('test merge');
             console.log('modify by testMerge');
+            console.log('abc');
         },
 
         modifyByMaster: function() {
             console.log('master');
+            console.log('haha');
         },
 
         testMergeCustom: function() {
