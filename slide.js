@@ -10,7 +10,7 @@
 
 ( function( root, factory ) {
     if ( typeof define === 'function' ) {
-        define( 'slide', [ 'jqmobi' ], function( $ ) {
+        define( 'slide', [ 'jqmobi', 'react' ], function( $, React ) {
             return factory( root, $ );
         } );
     } else {
@@ -26,6 +26,8 @@
             continuous: true,
             navClass: 'nav-list'
         };
+
+        console.log(React);
 
         this.config = $.extend( this.defaultConfig, config || {} );
 
