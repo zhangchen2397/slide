@@ -10,7 +10,7 @@
 
 ( function( root, factory ) {
     if ( typeof define === 'function' ) {
-        define( 'slide', [ 'jqmobi' ], function( $ ) {
+        define( 'slide', [ 'jqmobi', 'zepto', 'event' ], function( $, Zepto, Event ) {
             return factory( root, $ );
         } );
     } else {
@@ -26,6 +26,8 @@
             continuous: true,
             navClass: 'nav-list'
         };
+
+        console.log(Zepto);
 
         this.config = $.extend( this.defaultConfig, config || {} );
 
