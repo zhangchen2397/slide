@@ -135,6 +135,10 @@
 
         _testMerge: function() {
             console.log('haha');
+        },
+
+        modifyByMaster: function() {
+            console.log('master');
         }
     } );
 
