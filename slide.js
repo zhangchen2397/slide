@@ -40,6 +40,11 @@
             this._createNav();
             this._actContinue();
             this._initEvent();
+            this._masterBranch();
+        },
+
+        _masterBranch: function() {
+            console.log('masterBranch');
         },
 
         _cache: function() {
