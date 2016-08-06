@@ -135,10 +135,17 @@
 
         _testMerge: function() {
             console.log('haha');
+            console.log('modify test merge');
+            console.log('modify by master');
+            console.log('modify by zc1');
         },
 
         modifyByMaster: function() {
             console.log('master');
+        },
+
+        customFun: function() {
+            console.log('test');
         }
     } );
 
