@@ -10,7 +10,7 @@
 
 ( function( root, factory ) {
     if ( typeof define === 'function' ) {
-        define( 'slide', [ 'jqmobi', 'react' ], function( $, React ) {
+        define( 'slide', [ 'jqmobi', 'zepto', 'event' ], function( $, Zepto, Event ) {
             return factory( root, $ );
         } );
     } else {
@@ -26,8 +26,7 @@
             continuous: true,
             navClass: 'nav-list'
         };
-
-        console.log(React);
+        console.log(Zepto);
 
         this.config = $.extend( this.defaultConfig, config || {} );
 
