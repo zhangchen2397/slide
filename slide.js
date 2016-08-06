@@ -135,6 +135,7 @@
 
         _testMerge: function() {
             console.log('haha');
+            console.log('test merge');
         },
 
         modifyByMaster: function() {
