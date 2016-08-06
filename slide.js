@@ -39,6 +39,11 @@
             this._createNav();
             this._actContinue();
             this._initEvent();
+            this._testMergeBranch();
+        },
+
+        _testMergeBranch: function() {
+            console.log('testMergeBranch');
         },
 
         _cache: function() {
